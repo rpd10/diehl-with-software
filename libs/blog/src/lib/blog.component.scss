@@ -1,0 +1,29 @@
+.blog-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  align-items: center;
+  padding: 24px;
+}
+
+.blog-content {
+  max-width: 960px;
+  width: 100%;
+
+  .generated {
+
+    a,
+    a:visited,
+    a:active,
+    a:link,
+    a:hover {
+      color: #1976D2;
+    }
+
+
+    p,
+    pre {
+      margin-bottom: 20px;
+    }
+  }
+}

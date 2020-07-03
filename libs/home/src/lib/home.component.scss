@@ -1,0 +1,28 @@
+.home-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  align-items: center;
+  padding: 24px;
+}
+
+.home-content {
+  width: calc(100% - 32px);
+  max-width: 960px;
+}
+
+.article-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px !important;
+  margin-top: 24px;
+
+  .header {
+    .mat-card-header-text {
+      margin: 0;
+    }
+  }
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+}

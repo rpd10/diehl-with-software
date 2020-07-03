@@ -1,0 +1,26 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@rpd10/home": ["libs/home/src/index.ts"],
+      "@rpd10/blog": ["libs/blog/src/index.ts"],
+      "@rpd10/tags": ["libs/tags/src/index.ts"],
+      "@rpd10/blog-data": ["libs/blog-data/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

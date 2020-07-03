@@ -1,0 +1,49 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.toolbar {
+  place-content: center;
+  min-height: 64px;
+}
+
+.toolbar-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  max-width: 960px;
+  width: calc(100% - 32px);
+
+  a,
+  a:visited,
+  a:active,
+  a:link,
+  a:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .spacer {
+    flex: 1 0 auto;
+  }
+}
+
+
+.content {
+  flex: 1 0 auto;
+}
+
+.footer {
+  .row {
+    height: 32px;
+    place-content: center;
+  }
+
+  .link {
+    height: 32px;
+    width: 32px;
+    line-height: 32px;
+  }
+}

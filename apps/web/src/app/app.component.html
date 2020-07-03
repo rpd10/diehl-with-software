@@ -1,0 +1,24 @@
+<mat-toolbar color="primary" class="toolbar">
+  <div class="toolbar-content">
+    <a [routerLink]="['']">Diehl With Software</a>
+    <span class="spacer"></span>
+    <!-- <a mat-icon-button aria-label="Share this on twitter">
+      <mat-icon svgIcon="twitter"></mat-icon>
+    </a> -->
+  </div>
+</mat-toolbar>
+<main class="content">
+  <router-outlet></router-outlet>
+</main>
+<footer>
+  <mat-toolbar color="primary" class="footer">
+    <mat-toolbar-row class="row"><span class="mat-body-1">Find me on</span>
+      <a mat-icon-button aria-label="find me on twitter" class="link" href="https://www.twitter.com/DiehlWithRyan"
+        target="_blank" rel="noopener noreferrer">
+        <mat-icon svgIcon="twitter"></mat-icon>
+      </a>
+    </mat-toolbar-row>
+    <mat-toolbar-row class="row"><span class="mat-caption">Copyright © 2020. All Rights Reserved.</span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</footer>
