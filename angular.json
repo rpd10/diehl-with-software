@@ -23,16 +23,16 @@
             "aot": true,
             "assets": ["apps/web/src/favicon.ico", "apps/web/src/assets"],
             "styles": ["apps/web/src/styles.scss", "apps/web/src/theme.scss"],
-            "scripts": []
+            "scripts": [],
+            "baseHref": "/"
           },
           "configurations": {
             "production": {
-              "fileReplacements": [
-                {
-                  "replace": "apps/web/src/environments/environment.ts",
-                  "with": "apps/web/src/environments/environment.prod.ts"
-                }
-              ],
+              "fileReplacements": [{
+                "replace": "apps/web/src/environments/environment.ts",
+                "with": "apps/web/src/environments/environment.prod.ts"
+              }],
+              "baseHref": "/diehl-with-software/",
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -41,8 +41,7 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
-              "budgets": [
-                {
+              "budgets": [{
                   "type": "initial",
                   "maximumWarning": "2mb",
                   "maximumError": "5mb"
