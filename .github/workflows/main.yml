@@ -13,4 +13,4 @@ jobs:
       - uses: cmgriffing/scully-gh-pages-action@v8
         with:
           access-token: ${{ secrets.ACCESS_TOKEN }}
-          build-args: -- --prod --base-href /diehl-with-software/
+          build-args: -- --prod
