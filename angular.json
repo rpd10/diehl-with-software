@@ -23,8 +23,7 @@
             "aot": true,
             "assets": ["apps/web/src/favicon.ico", "apps/web/src/assets"],
             "styles": ["apps/web/src/styles.scss", "apps/web/src/theme.scss"],
-            "scripts": [],
-            "baseHref": "/"
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -32,7 +31,6 @@
                 "replace": "apps/web/src/environments/environment.ts",
                 "with": "apps/web/src/environments/environment.prod.ts"
               }],
-              "baseHref": "/diehl-with-software/",
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,

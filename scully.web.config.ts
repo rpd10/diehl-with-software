@@ -1,4 +1,5 @@
 import { ScullyConfig } from '@scullyio/scully';
+
 export const config: ScullyConfig = {
   projectRoot: './apps/web/src',
   projectName: 'web',
@@ -7,7 +8,8 @@ export const config: ScullyConfig = {
     '/blog/:slug': {
       type: 'contentFolder',
       slug: {
-        folder: "./blog"
-      }
-    },},
+        folder: './blog',
+      },
+    },
+  },
 };
