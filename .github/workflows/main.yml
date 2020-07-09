@@ -3,7 +3,8 @@ name: Scully Publish
 on:
   push:
     branches:
-      - live
+      - master
+      # TODO use the live branch when github pages supports it
     paths-ignore:
       - "docs/**"
 
