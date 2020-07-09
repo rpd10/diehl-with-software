@@ -4,14 +4,31 @@ on:
   push:
     branches:
       - live
+    paths-ignore:
+      - "docs/**"
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: cmgriffing/scully-gh-pages-action@v9
+      - uses: actions/setup-node@v2
         with:
-          access-token: ${{ secrets.ACCESS_TOKEN }}
-          build-args: -- --prod
-          scully-args: -- --configFile scully.web.config.prod.ts
+          node-version: "12"
+      - name: Install
+        run: npm ci
+      - name: Build
+        run: npm run build -- --prod
+      - name: Scully
+        run: npm run scully -- --configFile scully.web.config.prod.ts
+      - name: Deploy
+        run: |
+          git add ./docs
+          git commit -m "Auto-deploy live docs with new content"
+          git push
+      # - uses: cmgriffing/scully-gh-pages-action@v9
+      #   with:
+      #     access-token: ${{ secrets.ACCESS_TOKEN }}
+      #     build-args: -- --prod
+      #     scully-args: -- --configFile scully.web.config.prod.ts
+      #     deploy-branch: live

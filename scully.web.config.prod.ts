@@ -6,7 +6,7 @@ setPluginConfig(baseHrefRewrite, { href: '/diehl-with-software/' });
 export const config: ScullyConfig = {
   projectRoot: './apps/web/src',
   projectName: 'web',
-  outDir: './dist/static',
+  outDir: './docs',
   defaultPostRenderers,
   routes: {
     '/blog/:slug': {
