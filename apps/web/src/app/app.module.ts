@@ -14,7 +14,7 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ScullyLibModule,
+    ScullyLibModule.forRoot({ alwaysMonitor: true, useTransferState: true }),
     BrowserAnimationsModule,
     MatToolbarModule,
     MatIconModule,

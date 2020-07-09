@@ -7,3 +7,10 @@ body {
   margin: 0;
   font-family: Lato, "Helvetica Neue", sans-serif;
 }
+
+rpd10-root,
+rpd10-root-scully {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
