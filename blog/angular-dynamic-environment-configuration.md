@@ -2,6 +2,7 @@
 title: 'Angular Dynamic Environment Configuration'
 description: "Improve upon Angular's default strategy for managing environment configuration by loading it dynamically at runtime, in a type-safe manner."
 published: true
+date: '2020-07-06'
 tags: ['Angular', 'Nx']
 keywords:
   [

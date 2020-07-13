@@ -14,7 +14,13 @@ export class BlogDataService {
     this.articles$ = this.scullyRoutes.available$.pipe(
       map(
         (routes) =>
-          <BlogRoute[]>routes.filter((r) => r.route.startsWith('/blog/'))
+          <BlogRoute[]>(
+            routes
+              .filter((r) => r.route.startsWith('/blog/'))
+              .sort((a, b) =>
+                new Date(a.date).getTime() < new Date(b.date).getTime() ? 1 : -1
+              )
+          )
       )
     );
 

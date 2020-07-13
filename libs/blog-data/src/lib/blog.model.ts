@@ -5,4 +5,5 @@ export interface BlogRoute extends ScullyRoute {
   tags: Tag[];
   description: string;
   keywords: string[];
+  date: string;
 }
