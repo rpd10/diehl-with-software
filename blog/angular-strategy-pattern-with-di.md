@@ -76,7 +76,7 @@ import {
   ActivatedRouteSnapshot,
   RouterStateSnapshot,
 } from '@angular/router';
-import { AuthStrategy } from './auth-strategy.service';
+import { AuthStrategy } from './auth.strategy';
 
 @Injectable({ providedIn: 'root' })
 export class RequireAuthGuard implements CanActivate {
@@ -159,7 +159,7 @@ import {
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError, mergeMap } from 'rxjs/operators';
-import { TokenStrategy } from './token.service';
+import { TokenStrategy } from './token.strategy';
 
 const HTTP_AUTHORIZATION_HEADER = 'Authorization';
 
@@ -175,11 +175,11 @@ export class AuthInterceptor implements HttpInterceptor {
     const shouldAuth = this.requiresAuth(req);
 
     if (shouldAuth) {
-      return this.tokenStrategy.acquireToken(newReq).pipe(
+      return this.tokenStrategy.acquireToken(req).pipe(
         mergeMap((token) =>
           next
             .handle(
-              newReq.clone({
+              req.clone({
                 setHeaders: {
                   [HTTP_AUTHORIZATION_HEADER]: `Bearer ${token}`,
                 },
@@ -201,7 +201,7 @@ export class AuthInterceptor implements HttpInterceptor {
         )
       );
     } else {
-      return next.handle(newReq);
+      return next.handle(req);
     }
   }
 
@@ -282,7 +282,7 @@ export class MockTokenStrategy implements TokenStrategy {
     this.mockAuthLib.acquireTokenSilent(req.url);
 
   onUnauthorized = (err: HttpErrorResponse, token: string) =>
-    this.mockAuthLib.clearTokenCache(req.url);
+    this.mockAuthLib.clearTokenCache(token);
 }
 ```
 
@@ -313,3 +313,5 @@ the future when you need to support some other authentication method, the amount
 need to touch any of the guards, interceptors, components or other services - you just need to provide a new implementation for the
 strategies! Once you embrace this powerful pattern, you will find yourself using it to isolate your code from changes in third party
 dependencies.
+
+You can see an example repository here: https://github.com/rpd10/example-angular-strategy-pattern
