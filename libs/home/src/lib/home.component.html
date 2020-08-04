@@ -3,7 +3,7 @@
     <rpd10-tags [tags$]="articlesService.tags$" (tagsChange)="updateFilter($event)"></rpd10-tags>
     <mat-card *ngFor="let article of filteredArticles$ | async" class="article-card mat-elevation-z0">
       <mat-card-header class="header">
-        <mat-card-title>{{ article.title }}</mat-card-title>
+        <mat-card-title><a [routerLink]="article.route">{{ article.title }}</a></mat-card-title>
         <mat-card-subtitle>{{article.date | date: 'longDate'}} - {{ article.tags?.join(', ') }}</mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>{{ article.description }}</mat-card-content>

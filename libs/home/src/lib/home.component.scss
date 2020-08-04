@@ -17,6 +17,15 @@
   margin-top: 24px;
 
   .header {
+
+    a,
+    a:active,
+    a:visited,
+    a:hover {
+      color: currentColor;
+      text-decoration: none;
+    }
+
     .mat-card-header-text {
       margin: 0;
     }
